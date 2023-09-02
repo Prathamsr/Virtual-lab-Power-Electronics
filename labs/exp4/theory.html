@@ -1,0 +1,364 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Virtual Labs | Power Electronics Lab </title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <script>
+    window.onload = function () {
+      document.getElementById("theory").className = "active treeview";
+    }
+  </script>
+  <style>
+    #toggle_nav:hover {
+      background-color: #1261A0;
+    }
+
+    #aim {
+      background-color: #009dff;
+    }
+
+    #aim:hover,
+    #theory:hover,
+    #pretest:hover,
+    #procedure:hover,
+    #simulation:hover,
+    #result:hover,
+    #posttest:hover,
+    #references:hover {
+      background-color: #009dff;
+    }
+  </style>
+
+  <!-- Mathjs library -->
+
+  <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <!--Navigation Bar-->
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://iitr.ac.in"><span><img src="images/iitrLogo.png" alt=""
+              style="margin-top:-15px;height:50px;width: 400px;"></span></a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="../index.html" class="logo"
+        style="background-color:#009dff; border-right:solid;border-right-color: #1261A0;">
+        <p align="center" style="font-size:16px;"><b>Power Electronics Lab</b></p>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top" style="background-color:#009dff;">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button" id="toggle_nav">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <section class="content-header">
+          <ol class="breadcrumb">
+            <li>
+              <a href="../index.html"><i class="fa fa-dashboard"></i>Power Electronics Lab</a>
+            </li>
+            <li>
+              <a href="#">Three Phase Half Wave SCR</a>
+            </li>
+            <li class="active">Theory</li>
+          </ol>
+        </section>
+      </nav>
+    </header>
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" style="background-color:#1261A0;">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+          <div class="input-group"></div>
+        </form>
+        <!-- /.sear ch form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" style="background-color:#1261A0;">
+          <li class="treeview" id="aim">
+            <a href="index.html" id="aim">
+              <i class="fa fa-files-o" style="color:white;"></i> <span style="color:white;">Aim</span>
+
+            </a>
+          </li>
+          <li class="treeview" id="theory">
+            <a href="theory.html" id="theory" onclick="theory()">
+              <i class="fa fa-files-o" style="color:white;"></i>
+              <span style="color:white;">Theory</span>
+            </a>
+          </li>
+          <!--   <li class="treeview" id="numerical">
+                    <a href="numerical.php">
+                        <i class="fa fa-laptop"></i>
+                        <span>Numerical</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li>
+                <li class="treeview" id="program">
+                    <a href="program.php">
+                        <i class="fa fa-laptop"></i>
+                        <span>Program</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li> -->
+          <li class="treeview" id="pretest">
+            <a href="pretest.html" id="pretest">
+              <i class="fa fa-files-o" style="color:white;"></i> <span style="color:white;">Pre Test</span>
+
+            </a>
+          </li>
+
+          <li class="treeview" id="procedure">
+            <a href="procedure.html" id="procedure">
+              <i class="fa fa-files-o" style="color:white;"></i> <span style="color:white;">Procedure</span>
+            </a>
+          </li>
+          <li class="treeview" id="simulation">
+            <a href="simulation.html" id="simulation">
+              <i class="fa fa-laptop" style="color:white;"></i>
+              <span style="color:white;">Simulation</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+
+
+
+          <li class="treeview" id="posttest">
+            <a href=" posttest.html" id="posttest">
+              <i class=" fa fa-files-o" style="color:white;">
+              </i>
+              <span style="color:white;">Post Test</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+          <li class="treeview" id="ref">
+            <a href="references.html" id="references">
+              <i class="fa fa-files-o" style="color:white;"></i>
+              <span style="color:white;">References</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1 align="center">
+          Three Phase Half Wave Silicon Controlled Rectifier (SCR) <!-- Write experiment name here -->
+        </h1>
+      </section>
+      <!-- Main content -->
+      <section class="content">
+        <h3><b>Introduction </b></h3>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          A three-phase half-wave controlled rectifier is an electrical circuit used for converting alternating current (AC) into direct current (DC) by controlling the flow of current through a load. It is called a half-wave rectifier because it rectifies only one half of the input waveform.<br>
+
+          Here's an explanation of the working principle of a three-phase half-wave controlled rectifier:<br><br>
+          
+          1. <b>Input:</b> The rectifier is connected to a three-phase AC power source. The AC voltage waveform consists of three phases: phase A, phase B, and phase C.<br><br>
+          
+          2. <b>Rectification:</b> Each phase of the AC source is connected to a thyristor, forming a thyristor bridge. The diodes allow current flow in one direction and block it in the other direction. When the input voltage is positive in one phase, the corresponding thyristor conducts provided that gate trigger is given, allowing current to flow through the load connected to the output side of the bridge.<br><br>
+          
+          3. <b>Control:</b> In a controlled rectifier, the current flow through the thyristor (also known as a silicon-controlled rectifier or SCR). The thyristor acts as a switch that can be turned on or off depending on the control signal applied to its gate.<br><br>
+          
+          4. <b>Triggering:</b> To control the rectification process, the thyristors are triggered at specific points in the input waveform. Triggering is achieved by applying a pulse signal to the gate of the thyristor at the desired firing angle. The firing angle determines the portion of the input waveform during which the thyristor conducts current.<br><br>
+          
+          5. <b>Conduction:</b> Once triggered, the thyristor turns on and allows current to flow through the load until the end of the half-cycle or until the thyristor is turned off.<br><br>
+          
+          6. <b>Commutation:</b> When the input waveform crosses zero or becomes negative, the natural commutation occurs, turning off the conducting thyristor. This happens because the forward voltage across the thyristor drops below its holding voltage.<br><br>
+          
+          7. <b>Output:</b> The load connected to the output of the rectifier receives a pulsating DC voltage, which consists of positive half-cycles. The output voltage waveform is the result of rectifying only one half of the input waveform.<br><br>
+          
+          By controlling the firing angle of the thyristors, the average output voltage can be varied, enabling the regulation of power delivered to the load.
+          
+          It's important to note that the three-phase half-wave controlled rectifier is a simplified configuration and may require additional components, such as filters and smoothing capacitors, to reduce ripple and provide a smoother DC output.
+          
+          Overall, the three-phase half-wave controlled rectifier provides a means to convert three-phase AC power to pulsating DC power by controlling the firing of thyristors in each phase.
+        </p>
+
+        <h3><b>1. Three Phase Half Wave Controlled Rectifier - R Load</b></h3>
+        <center><img src="images\R load circuit.png" alt="R load circuit" height="250" width="450" style="mix-blend-mode: darken;"></center>
+        <center><b style="font-size:16px;">Fig. 1 Three Phase Half Wave SCR with R Load</b></center><br>
+
+        <center><img src="images\R load waveform.png" alt="Input waveform" height="400" width="400" style="mix-blend-mode: darken; -webkit-filter:contrast(120%);"></center><br>
+        <center><b style="font-size:16px;">Fig. 2 Waveforms of Three Phase Half Wave SCR with R Load</b></center>
+
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          The circuit consist of a delta star transformer and 3 thyristors T1, T2, T3 which are connected on the secondary star connected winding and a resistive load.
+          When a V<sub>a</sub> is positive, T<sub>1</sub> becomes forward biased and conducts. During the negative cycle of V<sub>a</sub>, T<sub>1</sub> turns off. 
+          Similarly T<sub>2</sub> and T<sub>3</sub> conducts only during the positive cycles of V<sub>b</sub> and V<sub>c</sub> respectively.
+          The average output voltage can be varied by varying the firing angles of the thyristors. The waveforms show the output voltage for various firing angles.
+          In the waveform, V<sub>a</sub> is denoted as V<sub>an</sub>, V<sub>b</sub> as V<sub>bn</sub> and V<sub>c</sub> as V<sub>cn</sub>.<br><br>
+          The expression for average and rms of output voltage and current are,<br>
+          For &alpha; < 30&deg;<br>
+          <center style="font-size:16px;">`V_(o) = 1/((2&pi;)/3) &Integral;_(&alpha;+&pi;/6)^(&alpha;+(5&pi;)/6) V_(mp) sin(&omega;t) d&omega;t = (3&Sqrt;3)/(2&pi;) V_(mp) cos&alpha; = (3V_(ml))/(2&pi;) cos&alpha; .........(1)`</center><br>
+          <center style="font-size:16px;">`I_(o) = V_(o)/R = (3V_(ml))/(2&pi;R) cos&alpha; .........(2)`</center><br>
+          <center style="font-size:16px;">`V_(o(rms)) = [1/((2&pi;)/3) &Integral;_(&alpha;+&pi;/6)^(&alpha;+(5&pi;)/6) V_(mp)^2 sin^2(&omega;t) d&omega;t]^(1/2)`</center><br>
+          <center style="font-size:16px;">`V_(o(rms)) = &Sqrt;3` `V_(mp) [1/6 + (&Sqrt;3)/(8&pi;) cos2&alpha;]^(1/2) = V_(ml) [1/6 + (&Sqrt;3)/(8&pi;) cos2&alpha;]^(1/2) .........(3)`</center><br>
+          <center style="font-size:16px;">`I_(o(rms)) = V_(o(rms))/R = (&Sqrt;3V_(mp))/R [1/6 + (&Sqrt;3)/(8&pi;) cos2&alpha;]^(1/2) .........(4)`</center><br>
+          
+          <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          For &alpha; > 30&deg;<br>
+        </p>
+        <center style="font-size:16px;">`V_(o) = 1/((2&pi;)/3) &Integral;_(&alpha;+&pi;/6)^(&pi;) V_(mp) sin(&omega;t) d&omega;t = (3)/(2&pi;) V_(mp) [1 + cos(&alpha; + 30&deg;)] .........(5)`</center><br>
+        <center style="font-size:16px;">`I_(o) = V_(o)/R = (3V_(mp))/(2&pi;R) [1 + cos(&alpha; + 30&deg;)] .........(6)`</center><br>
+        <center style="font-size:16px;">`V_(o(rms)) = [1/((2&pi;)/3) &Integral;_(&alpha;+&pi;/6)^(&pi;) V_(mp)^2 sin^2(&omega;t) d&omega;t]^(1/2)`</center><br>
+        <center style="font-size:16px;">`V_(o(rms)) = (&Sqrt;3V_(mp))/(2&Sqrt;&pi;) [((5&pi;)/6 - &alpha;) + 1/2sin(2&alpha; + &pi;/3)]^(1/2) .........(7)`</center><br>
+        <center style="font-size:16px;">`I_(o(rms)) = V_(o(rms))/R = (&Sqrt;3V_(mp))/(2&Sqrt;&pi;R) [((5&pi;)/6 - &alpha;) + 1/2sin(2&alpha; + &pi;/3)]^(1/2) .........(8)`</center><br>
+
+
+
+        </p>
+        <h3><b>2. Three Phase Half Wave Controlled Rectifier - RL Load</b></h3>
+
+
+
+        <center><img src="images\RL load circuit.png" alt="1 phase controlled bridge rectifier" height="250"
+            width="500" style="mix-blend-mode: darken;"></center>
+        
+        <center><b style="font-size:16px;">Fig. 3 Three Phase Half Wave SCR with RL Load</b></center><br>
+
+        <center><img src="images\RL load waveform.png" alt="Input waveform" height="600" width="550" style="mix-blend-mode: darken; -webkit-filter:contrast(120%);"></center>
+        <center><b style="font-size:16px;">Fig. 4 Waveforms of Three Phase Half Wave SCR with RL Load</b></center><br>
+
+        <p style="font-size:130%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        The circuit consist of a delta transformer and 3 thyristors T<sub>1</sub>, T<sub>2</sub>, T<sub>3</sub> which are connected on the secondary star connected winding and a RL load.
+        When V<sub>a</sub> is positive, T<sub>1</sub> becomes forward biased and conducts. During the negative cycle of V<sub>a</sub>, the current through T<sub>1</sub> is not zero due to inductor 
+        present in the load. So T<sub>1</sub> will remian ON during the negative cycle of V<sub>a</sub>. When V<sub>b</sub> is positive, T<sub>2</sub> is triggered and the load current gets transferred 
+        from T<sub>1</sub> to T<sub>2</sub>. At this instant, T<sub>1</sub> turns OFF. During the negative cycle of V<sub>b</sub>, the current through T<sub>2</sub> is not zero due to inductor present in the load.
+        So T<sub>2</sub> will remain ON during the negative cycle of V<sub>b</sub>. When T<sub>3</sub> is triggered during positive cycle of V<sub>c</sub>, the load current is transferred from T<sub>2</sub> to T<sub>3</sub>.
+        At this instant, T<sub>2</sub> turns OFF. Similarly, T<sub>3</sub> conducts during the negative cycle of V<sub>c</sub> and turns OFF when T<sub>1</sub> is triggered. The average output voltage can be varied by varying the firing 
+        angles of the thyristors. The waveforms shows the output voltage for various firing angles. In the waveform, V<sub>a</sub> is denoted as V<sub>an</sub>, V<sub>b</sub> as V<sub>bn</sub>, V<sub>c</sub> as V<sub>cn</sub>.
+        </p>
+
+        <p style="font-size:130%; text-align: justify; font-style:'Nunito sans', sans-serif;">The average and rms of
+          bridge output voltage and current is,</p>
+          <center style="font-size:16px;">`V_(o) = 1/((2&pi;)/3) &Integral;_(&alpha;+&pi;/6)^(&alpha;+(5&pi;)/6) V_(mp) sin(&omega;t) d&omega;t = (3&Sqrt;3)/(2&pi;) V_(mp) cos&alpha; = (3V_(ml))/(2&pi;) cos&alpha; .........(9)`</center><br>
+          <center style="font-size:16px;">`I_(o) = V_(o)/R = (3V_(ml))/(2&pi;R) cos&alpha; .........(10)`</center><br>
+          <center style="font-size:16px;">`V_(o(rms)) = [1/((2&pi;)/3) &Integral;_(&alpha;+&pi;/6)^(&alpha;+(5&pi;)/6) V_(mp)^2 sin^2(&omega;t) d&omega;t]^(1/2)`</center><br>
+          <center style="font-size:16px;">`V_(o(rms)) = &Sqrt;3` `V_(mp) [1/6 + (&Sqrt;3)/(8&pi;) cos2&alpha;]^(1/2) = V_(ml) [1/6 + (&Sqrt;3)/(8&pi;) cos2&alpha;]^(1/2) .........(11)`</center><br>
+          <center style="font-size:16px;">`I_(o(rms)) = V_(o(rms))/R = (&Sqrt;3V_(mp))/R [1/6 + (&Sqrt;3)/(8&pi;) cos2&alpha;]^(1/2) .........(12)`</center><br>
+
+
+        
+
+        <h3><b>Advantages of Three Phase Half Wave SCR</b></h3>
+        <p style="font-size:130%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+
+          1. Three-phase rectifiers are known for their high efficiency in converting AC power to DC power. The half-wave controlled rectifier configuration allows for efficient power conversion by utilizing only half of the AC input waveform, resulting in reduced power loss.<br><br>
+
+          2. Reduced ripple content: The three-phase input of the rectifier provides a more continuous and balanced waveform, resulting in reduced ripple content in the output DC voltage. This leads to improved output voltage stability and reduced voltage fluctuations, which is beneficial for applications that require a steady DC supply.<br><br>
+
+          3. Three-phase rectifiers inherently have lower harmonic distortion compared to single-phase rectifiers. The balanced three-phase input waveform helps to minimize the generation of harmonics, which can cause interference and inefficiency in electrical systems. Lower harmonic distortion contributes to improved power quality and reduced stress on the electrical components.<br><br>
+
+          4. Three-phase systems are capable of delivering higher power compared to single-phase systems. The three-phase half-wave controlled rectifier can handle larger power loads, making it suitable for applications that require high-power DC supplies, such as industrial motor drives, power supplies for electric vehicles, and large-scale battery charging systems.<br><br>
+
+          5. The use of three-phase power distribution provides redundancy and improved reliability in electrical systems. In case of a fault or failure in one phase, the other two phases can continue to deliver power, ensuring uninterrupted operation. This increased reliability is crucial for critical applications where downtime can be costly.<br><br>
+
+          6. Three-phase rectifiers offer better power factor correction capabilities compared to single-phase rectifiers. Power factor correction helps to reduce reactive power and improve the overall power efficiency of the system. By utilizing three-phase power, the rectifier can achieve improved power factor performance, resulting in reduced electricity consumption and improved energy efficiency.<br>
+          </p>
+
+        <h3><b>Disadvantages of Three Phase Half Wave SCR</b></h3>
+        <p style="font-size:130%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          1. The half-wave controlled rectifier can only utilize half of the input waveform, resulting in a lower average output voltage compared to full-wave rectifiers. This reduces the overall efficiency of the rectification process.<br><br>
+
+          2. The rectified output waveform of a half-wave controlled rectifier contains significant harmonic distortion. This can lead to increased electromagnetic interference (EMI) and reduced power quality in the electrical system.<br><br>
+
+          3. The rectifier draws current from the AC supply discontinuously, causing a poor power factor. This can result in increased line losses and decreased overall system efficiency. Power factor correction techniques may be necessary to compensate for this drawback.<br><br>
+
+          4. The half-wave controlled rectifier is not suitable for driving inductive loads, such as motors, due to its intermittent output waveform. Inductive loads require a continuous and smooth DC voltage for proper operation. This limitation restricts its applicability in many industrial and power system applications.<br><br>
+
+          5. The output voltage of the rectifier is influenced by changes in the input voltage, load impedance, and firing angle control. Achieving precise voltage regulation can be challenging, especially when operating with varying load conditions.<br><br>
+
+          6. The use of power electronic devices like thyristors or diodes in the rectifier circuit exposes them to high-voltage transients during switching operations. This can lead to increased stress on these components, potentially reducing their reliability and requiring additional protective measures.<br><br>
+        
+          7. The control circuitry required for managing the firing angle of the rectifier adds complexity to the overall system design. It requires additional control and feedback mechanisms to achieve proper operation, making it more intricate and potentially more expensive to implement.<br><br>
+
+          8. The combination of low output voltage, poor power factor, and increased harmonic content results in reduced overall efficiency for the half-wave controlled rectifier compared to other rectifier topologies. This can lead to increased power losses and energy wastage.<br>
+        </p>
+          
+        <h3><b>Applications of Three Phase Half Wave SCR</b></h3>
+        <p style="font-size:130%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+
+          1. Motor Drives<br><br>
+
+          2. Welding Equipment<br><br>
+
+          3. Power Quality Control<br><br>
+
+          4. Battery Charging Systems<br><br>
+
+          5. Power Supplies <br></p>
+        <!--Theory of experiment -->
+
+      </section>
+      <!-- /.content -->
+    </div>
+    <footer class="main-footer">
+      <h4 align="center">Lab contributed by Jodhpur Institute of Engineering & Technology<!-- Institute Name --> </h4>
+    </footer>
+  </div>
+
+</body>
+
+</html>
+<script>
+  function theory() {
+    document.getElementById("theory").style.backgroundColor = "#009dff";
+
+  }
+
+
+</script>
+<!-- ./wrapper -->
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- Slimscroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>

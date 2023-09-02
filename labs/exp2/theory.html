@@ -1,0 +1,549 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Virtual Labs | Power Electronics Lab </title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <script>
+    window.onload = function () {
+      document.getElementById("theory").className = "active treeview";
+    }
+  </script>
+  <style>
+    #toggle_nav:hover {
+      background-color: #1261A0;
+    }
+
+    #aim {
+      background-color: #009dff;
+    }
+
+    #aim:hover,
+    #theory:hover,
+    #pretest:hover,
+    #procedure:hover,
+    #simulation:hover,
+    #result:hover,
+    #posttest:hover,
+    #references:hover {
+      background-color: #009dff;
+    }
+  </style>
+
+  <!-- Mathjs library -->
+
+  <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <!--Navigation Bar-->
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://iitr.ac.in"><span><img src="images/iitrLogo.png" alt=""
+              style="margin-top:-15px;height:50px;width: 400px;"></span></a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="../index.html" class="logo"
+        style="background-color:#009dff; border-right:solid;border-right-color: #1261A0;">
+        <p align="center" style="font-size:16px;"><b>Power Electronics Lab</b></p>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top" style="background-color:#009dff;">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button" id="toggle_nav">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <section class="content-header">
+          <ol class="breadcrumb">
+            <li>
+              <a href="../index.html"><i class="fa fa-dashboard"></i>Power Electronics Lab</a>
+            </li>
+            <li>
+              <a href="#">Single Phase Half Wave SCR</a>
+            </li>
+            <li class="active">Theory</li>
+          </ol>
+        </section>
+      </nav>
+    </header>
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" style="background-color:#1261A0;">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+          <div class="input-group"></div>
+        </form>
+        <!-- /.sear ch form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" style="background-color:#1261A0;">
+          <li class="treeview" id="aim">
+            <a href="index.html" id="aim">
+              <i class="fa fa-files-o" style="color:white;"></i> <span style="color:white;">Aim</span>
+
+            </a>
+          </li>
+          <li class="treeview" id="theory">
+            <a href="theory.html" id="theory" onclick="theory()">
+              <i class="fa fa-files-o" style="color:white;"></i>
+              <span style="color:white;">Theory</span>
+            </a>
+          </li>
+          <!--   <li class="treeview" id="numerical">
+                    <a href="numerical.php">
+                        <i class="fa fa-laptop"></i>
+                        <span>Numerical</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li>
+                <li class="treeview" id="program">
+                    <a href="program.php">
+                        <i class="fa fa-laptop"></i>
+                        <span>Program</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li> -->
+          <li class="treeview" id="pretest">
+            <a href="pretest.html" id="pretest">
+              <i class="fa fa-files-o" style="color:white;"></i> <span style="color:white;">Pre Test</span>
+
+            </a>
+          </li>
+
+          <li class="treeview" id="procedure">
+            <a href="procedure.html" id="procedure">
+              <i class="fa fa-files-o" style="color:white;"></i> <span style="color:white;">Procedure</span>
+            </a>
+          </li>
+          <li class="treeview" id="simulation">
+            <a href="simulation.html" id="simulation">
+              <i class="fa fa-laptop" style="color:white;"></i>
+              <span style="color:white;">Simulation</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+
+
+
+          <li class="treeview" id="posttest">
+            <a href=" posttest.html" id="posttest">
+              <i class=" fa fa-files-o" style="color:white;">
+              </i>
+              <span style="color:white;">Post Test</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+          <li class="treeview" id="ref">
+            <a href="references.html" id="references">
+              <i class="fa fa-files-o" style="color:white;"></i>
+              <span style="color:white;">References</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1 align="center">
+          Single Phase Half Wave Silicon Controlled Rectifier (SCR)<!-- Write experiment name here -->
+        </h1>
+      </section>
+      <!-- Main content -->
+      <section class="content">
+        <h3 style="margin-top:5%"><b> Introduction </b> </h3>
+
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+
+          <!--Theory of experiment -->
+
+          Single Phase Half Wave Controlled Rectifier is a rectifier circuit which converts AC input into DC output only
+          for positive half cycle of the AC input supply. The word “controlled” means that, we can change the starting
+          point of load current by controlling the firing angle of SCR, the SCR turn ON at certain point of time when it
+          is forward biased.
+          A Single Phase Half Wave Controlled Rectifier circuit consists of SCR / thyristor, an AC voltage source and
+          load. The load may be purely resistive, Inductive or a combination of resistance and inductance.<br><br>
+
+          <b>Following points must be kept in mind while discussing controlled rectifier:</b><br><br>
+          1. The necessary condition for turn ON of SCR is that, it should be forward biased and gate signal must be
+          applied. In other words, an SCR will only get turned ON when it is forward biased and fired or gated.<br>
+          2. SCR will only turn off when current through it reaches below holding current and reverse voltage is applied
+          for a time period more than the SCR turn off time.<br>
+        </p>
+        <h3 style="margin-top:2.5%"><b>1. Single Phase Half Wave Controlled Rectifier with Resistive Load</b></h3>
+        <center> <img src="images\Rloadtheory.PNG " height=300px; style="-webkit-filter:contrast(200%);"
+            alt="Fig. 2 :Single Phase Half Wave Controlled Rectifier Circuit with R load"></center>
+        <center><b style="font-size: 18px;">Fig. 1 Single Phase Half Wave Controlled Rectifier Circuit with R load</b></center>
+
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+
+          The circuit is energized by the line voltage or transformer secondary voltage, V = V<sub>max</sub> sin ωt as
+          shown in Fig 1. Here, V<sub>0</sub> = Load output voltage,
+          i<sub>0</sub> = Load current and
+          V<sub>T</sub> = Voltage across the thyristor T. It is assumed that the peak supply voltage never exceeds the
+          forward and reverse-blocking
+          ratings of the thyristor. The thyristor can be triggered at any angle α in the positive half cycle and thus
+          the output voltage can be controlled. The thyristor blocks during the negative half cycle. The various voltage
+          and current waveforms for the Single Phase Half Wave Controlled Rectifier with resistive load circuit are
+          shown in Fig 2.<br>
+
+          <center> <img src="images\R load graph.PNG" 
+              alt="Fig. 2 :Single Phase Half Wave Controlled Rectifier Circuit with R load"></center><br>
+          <center><b style="font-size: 18px;">Fig. 2 Waveform of input voltage, firing pulse, output voltage, load current, voltage across
+              thyristor </b></center><br>
+        </p>
+
+        <p style="font-size:130%; margin-top:0.5%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+
+          During the positive half cycle of the supply voltage, the thyristor anode is positive w.r.t, its cathode and
+          until the thyristor is triggered by a proper gate pulse, it blocks the flow of load current in the forward
+          direction.
+          When the thyristor is fired at an angle α, full supply voltage (ignoring the thyristor drop V<sub>T</sub>) is
+          applied to the load. Thus, the load is directly connected to the ac supply. With a zero reactance source and a
+          purely resistive load, the current waveform after the thyristor is triggered will be identical to the applied
+          voltage wave and of a magnitude dependent on the amplitude of the applied voltage and the value of the load
+          resistance R. At zero crossing, the thyristor is turned off by natural commutation thereby switching off the
+          power to the load. The voltage and current are in same phase, as illustrated in Fig. 2. The angle (π – α)
+          during which the thyristor conducts is called the conduction angle. By varying the firing angle α, the output
+          voltage can be controlled. During the period of conduction, voltage drop across the thyristor is of the order
+          of one volt. During the negative half cycle of the supply voltage, the thyristor blocks the flow of load
+          current and no voltage is applied to the load R.
+        </p>
+        
+
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+
+        <b>Analysis</b> : Average load voltage is given by<br>
+
+        <center style="font-size: 16px;">`V_(dc) = 1/(2&pi;) [&Integral;_&alpha;^&pi; V_max sin⁡wt
+            d(wt)+&Integral;_&pi;^(2&pi;)(0)d(&omega;t)]`</center><br>
+
+        <center style="font-size: 16px;">`V_(dc) = 1/(2&pi;)[-V_(max)cos&omega;t]_&alpha;^&pi;=V_(max)/(2&pi;)(1+cos&alpha;).......(1)`</center><br>
+        </p>
+
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+
+        Where, V<sub>max</sub> is peak value of the ac input voltage.
+        From the above Eq. (1) it is obvious that the load voltage varies with firing angle α having extremes values
+        for α = 0 and α = π or 180°. The maximum output voltage is obtained when α = 0 and is given by<br>
+
+        <center style="font-size: 16px;">`V_(dc max) = V_(max)/&pi; .......(2)`</center></p>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        <b>Average load current</b> with resistive load is directly proportional to the average load voltage and is
+        given by<br>
+        <center style="font-size: 16px;">`I_(dc)=V_(dc)/R=V_max/(2&pi;R)(1+cos&alpha;).......(3)`</center></p>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        The rms value of load voltage is given by</p>
+        <center style="font-size: 16px;">`V_(L
+            rms)=V_max/(2&Sqrt;&pi;)(&pi;-&alpha;+1/2sin2&alpha;)^(1/2).......(4)`</center>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        For firing angle α =0</p>
+        <center style="font-size: 16px;">`V_(Lrms)=V_(max)/2.......(5)`</center>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        The rms value of load current</p>
+        <center style="font-size: 16px;">`I_(Lrms)=V_(L
+          rms)/R=V_max/(2R&Sqrt;&pi;)(&pi;-&alpha;+1/2sin2&alpha;)^(1/2)........(6)`</center>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        Average output power is given by
+        </p>
+
+        <center style="font-size: 18px;">`P_(dc)=V_(dc)*I_(dc)=V_(max)^2/(4&pi;^2R)(1+cos&alpha;)^2.......(7)`</center><br>
+
+        <h3><b>2. Single Phase Half Wave Controlled Rectifier with RL Load</b></h3>
+
+        <center><img src="images\RL load.PNG " height="300" style="-webkit-filter:contrast(180%);"></center>
+        <center><b style="font-size: 18px;">Fig. 3 Single Phase Half Wave Controlled Rectifier Circuit with RL load</b></center><br>
+
+        <p style="font-size:130%; margin-top:0.5%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          The circuit diagram of a single phase half wave controlled rectifier with RL load is shown above. This circuit
+          consists of a thyristor T, source Vs and RL load. The output voltage is the voltage across the load and shown
+          as V<sub>o</sub>. Output current is the current through the load and shown as i<sub>o</sub>.
+          <br><br>
+          </p>
+          <center><img src="images\RL load graph.PNG" height="500" alt=""></center><br>
+          <center><b style="font-size: 18px;">Fig. 4 Waveform of input voltage, firing pulse, output voltage, load current, voltage drop across
+              thyristor </b></center>
+
+          <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          The waveform of source voltage, load voltage, load current and voltage across thyristor is shown above.
+          It is assumed that the thyristor T is fired at an angle ωt = α. As soon as the thyristor T is fired at ωt = α,
+          load voltage equal to the source voltage instantaneously appears across the load terminal. This is because,
+          the thyristor is forward biased in between ωt = 0 to α. Hence, once the thyristor is gated, it starts
+          conducting.
+
+          <br><br>However, the current does not start at this instant of firing. This is just because of the nature of
+          load. Since, the load is inductive, it will not allow any sudden change. Therefore, at ωt = α, the output
+          current will be zero and will gradually increase. The output current will become maximum and then start
+          decreasing. It should be noted here that, this behavior of load current i<sub>o</sub> will not be observed for purely
+          resistive load.
+
+          <br><br>At ωt = π, the load voltage V<sub>o</sub> reduces to zero. However, the load current will not be zero at this
+          instant because of inductance L. Due to this, thyristor will not turn off, even though it is reversed biased.
+          Rather it will continue to conduct till ωt = β. At ωt = β, the load current becomes zero and thyristor is
+          reversed biased, hence it will turn off. This is a case of natural commutation.
+
+          <br><br>After ωt = β, V<sub>o</sub> = 0 and i<sub>o</sub> = 0. At ωt = (2π+α), the SCR is triggered again, V<sub>o</sub> is applied to the load
+          and load current develops as discussed before. The angle β where the load current becomes zero is called
+          extinction angle and the angle (β-α) for which thyristor is ON is called conduction angle.
+
+          <br><br>Carefully observe the voltage across the thyristor. The SCR is reverse biased from ωt = β to ωt = 2π.
+          During this period, the current through thyristor is also zero. Therefore, circuit turn off time is t<sub>c</sub> = [(2π
+          – β) / ω] second. This time must be greater than the thyristor turn-off time otherwise thyristor may turn on
+          at undesired instant and will lead to commutation failure.<br><br>
+
+          The Voltage equation is :<br></p>
+
+          <center style="font-size: 16px;">`V_msin &omega;t = Ri_0+L (dI_0)/(dt)`</center>
+
+          <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          The load current i<sub>o</sub> consist of two component, one steady state component i<sub>s</sub> and the
+          other transient component i<sub>t</sub>. Here i<sub>s</sub> is given by</p>
+
+          <center style="font-size: 16px;">`i_s = V_m/(&Sqrt;R^2+X^2)sin(&omega;t-&phi;)`</center>
+
+          <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          The transient component i<sub>t</sub> can be obtained from force free equation<br>
+          <center style="font-size: 16px;">`Ri_t + L(di_t)/(dt) = 0`</center>
+          </p>
+
+          <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          Its solution gives,
+          </p>
+
+          <center style="font-size: 16px;">`i_t = A e^-(R/L)t`</center><br>
+
+          <center style="font-size: 16px;">`i_o = i_s + i_t = V_m/Z sin(&omega;t-&phi;) + Ae^(-(R/L)t) .........(8)`</center>
+
+
+          <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          Constant A can be obtained from the boundary condition at &omega;t = &alpha;. At time `t =&alpha;/&omega;`, `i_o = 0`. Thus from equation (8)
+        </p>
+
+        <center style="font-size: 16px;">`A = -V_m/Z sin(&alpha;-&phi;)e^((R&alpha;)/(L&omega;))`</center>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        Substitution of A in Eq. (8) gives </p>
+
+        <center style="font-size: 16px;">`i_o = V_m/Z  sin(&omega;t-&phi;)-V_m/Zsin(&alpha;-&phi;)exp{-R/(&omega;L)(&omega;t-&alpha;)}.......(9)`</center>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        It is also seen from waveform of `i_o` in fig. 4 that when &omega;t = &beta;, load current `i_o`= 0.<br>
+        The average voltage V<sub>o</sub> is given by </p>
+
+        <center style="font-size: 16px;">`V_o = 1/(2&pi;)&Integral;_&alpha;^&beta;V_m sin&omega;t d
+            (&omega;t) = V_m/(2&pi;)(cos&alpha;-cos&beta;).......(10)`</center> 
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        The average load currrent I<sub>o</sub> is given by </p>
+
+        <center style="font-size: 16px;">`I_o = V_m/(2&pi;R)(cos&alpha;-cos&beta;)`</center>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+        Rms Load voltage is
+        </p>
+
+        <center style="font-size: 16px;">`V_(or) = [1/(2&pi;)&Integral;_&alpha;^&beta;V_m^2
+            sin^2&omega;t*d(&omega;t)]^(1/2)` </center><br>
+
+        <center style="font-size: 16px;">
+          `V_(or) = V_m/(2&Sqrt;&pi;)&Sqrt;[(&beta;-&alpha;)-1/2{sin2&beta;-sin2&alpha;}]..........(11)`</center>
+
+
+        <h3><b>3. Single Phase Half Wave Controlled Rectifier with RLE Load</b></h3>
+        <center><img src="images\RLE load.PNG" alt="" style="-webkit-filter:contrast(180%);"></center>
+        <center><b style="font-size: 18px;">Fig. 5 Single Phase Half Wave Controlled Rectifier Circuit with RLE load</b></center><br>
+
+        <p style="font-size:130%; margin-top:0.5%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          A Single Phase Half Wave Controlled Rectifier Circuit with RLE load is shown in Fig. 5. The counter emf E in
+          the load may be due to a battery or a DC motor.
+          The minimum value of firing angle is obtained from the relation V<sub>m</sub>sin &omega;t = E, this is shown to
+          occur at an angle &theta;<sub>1</sub> where <br>
+          <center style="font-size: 16px;">`&theta;_1 = sin^-1(E/V_m).......(12)`</center>
+        </p>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          In case thyristor T is fired at an angle α <&theta;<sub>1</sub>, then E > V<sub>s</sub> SCR is reversed biased
+            and therefore it will not turn on.
+            Similarly, maximum value of firing angle is &theta;<sub>2</sub> = &pi;-&theta;<sub>1</sub> in Fig. 6. During
+            the interval load current i<sub>o</sub> is zero, Load
+            voltage v<sub>o</sub>= E and during the time i<sub>o</sub> is not zero, v<sub>o</sub> follows v<sub>s</sub>
+            curve, KVL gives the voltage differential equation as 
+            <center style="font-size: 16px;">`V_m sin &omega;t = Ri_o + L(di_o)/dt + E.........(13)`</center>
+            <br>
+        </p>
+        <center><img src="images\RLE graph.PNG" alt=""></center><br>
+        <center><b style="font-size: 18px;">Fig. 6 Voltage and current waveforms</b></center>
+
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          The solution of this equation is made up of two components: namely steady-state current component
+          i<sub>s</sub> and the transient current component i<sub>t</sub>. For
+          conveninence, i<sub>s</sub> may be thought of as the sum of i<sub>s1</sub> and i<sub>s2</sub>, Where
+          i<sub>s1</sub> is the steady state current due to ac source voltage
+          acting alone and i<sub>s2</sub> is that due to dc counter emf E acting alone due to source voltage
+          V<sub>m</sub>sin &omega;t is given by <br>
+          <center style="font-size: 16px;">`i_(s1) = V_m/Z sin(&omega;t-&phi;)`</center>
+        </p>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          if only E were present, then steady state current i<sub>s2</sub> would be given by
+          <center style="font-size: 16px;">`i_(s2) = -(E/R)`</center>
+        </p>
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          The transient current i<sub>t</sub> is given by `i_t = Ae^(-(R/L)^t)`<br><br>
+          At &omega;t = &alpha;, `i_o`= 0, i.e., at `t = &alpha;/&omega;`, `i_o = 0`.
+          <br>
+          <center style="font-size: 16px;">`A = [E/R-V_m/Z sin(&alpha;-&phi;)]e^-((Ra)/(L&omega;))`</center>
+          <br>
+        </p>
+        <center style="font-size: 16px;">
+          `i_o=V_m/Z[sin(&omega;t-&phi;)-sin(&alpha;-&phi;)exp{-R/(&omega;L)(&omega;t-&alpha;)}]-E/R[1-exp{-R/(&omega;L)(&omega;t-&alpha;)}].......(14)`
+        </center>
+
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          Equation 11 is applicable for &alpha;&le; &omega;t&ge;&beta;. The extinction angle &beta; depends upon load emf
+          E, firing angle &alpha; and the load impedence angle &phi; the average load current `I_o` is given by<br><br>
+          <center style="font-size: 16px;">`
+              I_o=1/(2&pi;R)[V_m(cos&alpha;-cos&beta;)-E(&beta;-&alpha;)]..........(15)`</center>
+          
+        </p>
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          Average load voltage V<sub>o</sub> is given by</p>
+        <center style="font-size: 16px;"><b>` V_o=E+I_oR=E+1/(2&pi;)[2V_m sin(&alpha;+&gamma;/2)sin
+            (&gamma;/2)-&gamma;*E]`</b></center><br><br>
+        <center style="font-size: 16px;">` V_o=E(1-&gamma;/(2&pi;))+V_m/&pi;
+            sin(&alpha;+&gamma;/2)sin(&gamma;/2)..........(16)`</center>
+        
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          In case &beta; is made equal to (&gamma;+&alpha;) in the above expression, Equation (15) can be obtained.
+          If load inductance L is zero in Fig. 5, then extinction angle &beta; = `&theta;_2` and &gamma; = &beta; - &alpha;
+          = &theta;<sub>2</sub> - &alpha; but &theta;<sub>2</sub> = &pi; - &theta;<sub>1</sub>.<br><br>
+          This gives &beta; = &theta;<sub>2</sub> = &pi; - &theta;<sub>1</sub> and &gamma; = &pi; - &theta;<sub>1</sub> - &alpha;.
+          Putting this in Equation (15), we get average load current I<sub>o</sub> as under :<br>
+          <center style="font-size: 16px;">`I_o = 1/(2&pi;R)[V_m (cos&alpha;+cos
+              &theta;_1)-E(&pi;-&theta;_1-&alpha;)].......(17)`</center>
+          
+        </p>
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          For no inductance in the load circuit, &beta; = &pi; - &alpha;. The RMS value of load current for L = 0 is obtained
+          as under:<br>
+          <center style="font-size: 16px;">`I_(or)=[1/(2&pi;R^2)&Integral;_&alpha;^(&pi;-&alpha;){(V_m
+              sin&omega;t-E)^2*d(&omega;t)}]^(1/2).........(18)`</center>
+          
+        </p>
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          Power delivered to load </p>
+        <center style="font-size: 16px;">`P=I^2R+I_oE.......(19)`</center>
+        <p style="font-size:130%; margin-top:2%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          <center style="font-size: 18px;">Supply power factor =`I_or^2R+I_oE/(V_sI_(or))`</center><br>
+        </p>
+
+        <h3><b>Advantages of Half-wave controlled rectifier </b></h3>
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          1. Half wave controlled rectifier is a simple circuit, We can easily construct.<br>
+          2. Low cost and Simple circuit with less number of components.<br>
+          3. Economical at initial state. Although there is a higher cost over time due to more power losses.
+
+        <h3><b>Disadvantages of Half-wave controlled rectifier </b></h3>
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          1. The transformer utilization factor is low.<br>
+          2. They produce a low output voltage.<br>
+          3. DC saturation of transformer core resulting in magnetizing current and also some hysteresis losses and
+          generation of harmonics.<br>
+          4. The power is delivered only during the one-half cycle of the input alternating voltage.<br>
+          5. Ripple factor is high, therefore required to give steady dc output.<br>
+        </p>
+
+        <h3><b>Applications of Half-wave controlled rectifier</b></h3>
+        <p style="font-size:130%; margin-top:1%; text-align: justify; font-style:'Nunito sans', sans-serif;">
+          1. AM radio<br>
+          2. Pulse generated circuits<br>
+          3. Single demodulation<br>
+          4. Voltage multiplier<br>
+        </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </p>
+      </section>
+      <!-- /.content -->
+    </div>
+    <footer class="main-footer">
+      <h4 align="center">Lab contributed by Jodhpur Institute of Engineering & Technology<!-- Institute Name --> </h4>
+    </footer>
+  </div>
+
+</body>
+
+</html>
+<script>
+  function theory() {
+    document.getElementById("theory").style.backgroundColor = "#009dff";
+
+  }
+
+
+</script>
+<!-- ./wrapper -->
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- Slimscroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
